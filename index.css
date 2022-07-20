@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {  
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;    
+    flex-direction: column  ;
+    gap: 1vw;
+}
+h1 {
+    font-family: 'Roboto', sans-serif;
+}
+p {
+    font-family: 'Roboto', sans-serif;
+
+}
+#result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#threeDays {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(194, 176, 176);
+    border-radius: 1vw;
+    padding: 1vw;
+   
+}
+#anotherDays {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(194, 176, 176);
+    border-radius: 1vw;
+    padding: 1vw;
+    
+}
+#styleAjust {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+div {
+    gap: 0.4vw;
+}

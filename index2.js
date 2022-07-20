@@ -33,7 +33,7 @@ async function selectedState() {
                         createOption.innerHTML = `${item.nome}`;
                         createSelect.appendChild(createOption);        
                     });
-                        bodyIndex.appendChild(createSelect);
+                    mainPage.appendChild(createSelect);
             })
     })
     return promisseSelecteState
@@ -144,14 +144,17 @@ async function weather(cityId) {
         })
        .then((dataWeather) => {
         
-            result.innerHTML = ` <div>
+            result.innerHTML = `<div id='threeDays'>
+            <div id='styleAjust'>
         <p>Manhã</p>
                 <p>Data: ${dataWeather[0]['date']}</p>
                 <p>Dia: ${dataWeather[0]['weekDay']}</p>
                 <img src=${dataWeather[0]['icon']}></img>
-                <p>Previsão: ${dataWeather[0]['resume']}</p>
+                <p>Previsão:${dataWeather[0]['resume']}</p>
                 <p>Temperatura Máxima:${dataWeather[0]['max']}</p>
                 <p>Temperatura Mínnina:${dataWeather[0]['min']}</p>
+                </div>
+                <div id='styleAjust'>
          <p>Tarde</p>
                 <p>Dia: ${dataWeather[1]['date']}</p>
                 <p>Dia: ${dataWeather[1]['weekDay']}</p>
@@ -159,15 +162,19 @@ async function weather(cityId) {
                 <p>Previsão: ${dataWeather[1]['resume']}</p>
                 <p>Temperatura Máxima:${dataWeather[1]['max']}</p>
                 <p>Temperatura Mínina:${dataWeather[1]['min']}</p>
-         <p>Noite</p>
-            <p>Data: ${dataWeather[2]['date']}</p>
-            <p>Dia: ${dataWeather[2]['weekDay']}</p>
-            <img src=${dataWeather[2]['icon']}></img>
-            <p>Previsão: ${dataWeather[2]['resume']}</p>
-            <p>Temperatura Máxima:${dataWeather[2]['max']}</p>
-            <p>Temperatura Mínina:${dataWeather[2]['min']}</p>
+                </div>
+            <div id='styleAjust'>
+                <p>Noite</p>
+                    <p>Data: ${dataWeather[2]['date']}</p>
+                    <p>Dia: ${dataWeather[2]['weekDay']}</p>
+                    <img src=${dataWeather[2]['icon']}></img>
+                    <p>Previsão: ${dataWeather[2]['resume']}</p>
+                    <p>Temperatura Máxima:${dataWeather[2]['max']}</p>
+                    <p>Temperatura Mínina:${dataWeather[2]['min']}</p>
+            </div>
         </div>
-        <div>
+        <div id='anotherDays'>
+        <div id='styleAjust'>
             <p>Data: ${dataWeather[3]['date']}</p>
              <p>Dia: ${dataWeather[3]['weekDay']}</p>
              <img src=${dataWeather[3]['icon']}></img>
@@ -175,14 +182,15 @@ async function weather(cityId) {
              <p>Temperatura Máxima:${dataWeather[3]['max']}</p>
             <p>Temperatura Mínina:${dataWeather[3]['min']}</p>
         </div>
-        <div>
+        <div id='styleAjust'>
             <p>Data: ${dataWeather[4]['date']}</p>
              <p>${dataWeather[4]['weekDay']}</p>
              <img src=${dataWeather[4]['icon']}></img>
-             <p>${dataWeather[4]['resume']}</p>
+             <p>Previsão:${dataWeather[4]['resume']}</p>
              <p>Temperatura Máxima:${dataWeather[4]['max']}</p>
             <p>Temperatura Mínina:${dataWeather[4]['min']}</p>
-        </div>`
+        </div>
+        <div>`
        })
         })
 }
